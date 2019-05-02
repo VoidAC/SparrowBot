@@ -1,7 +1,7 @@
 /*
 ToastBot, the ordinary open source bot
 */
-//aquatic is a homosexual goomba ok
+//are you happy now you homosexual goomba @Aquatic
 const Discord = require("discord.js");
 const math = require("mathjs");
 const config = require("./config.json")
