@@ -47,7 +47,7 @@ client.on("message", async message => {
             setTimeout(function() {
                 message.channel.startTyping();
                 message.reply({
-                    color: 353231,
+                    color: 12290084 ,
                     title: "ToastBot",
                     description: `Information`,
                     fields: [{
