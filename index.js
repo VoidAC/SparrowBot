@@ -16,7 +16,7 @@ client.on("ready", async () => {
     client.user.setActivity("Toasting bread")
 });
 
-
+//bot listener
 client.on("message", async message => {
     if (message.author.bot) return;
     prefix = config.prefix;
