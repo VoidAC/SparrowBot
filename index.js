@@ -46,42 +46,40 @@ client.on("message", async(message) => {
 		});
 	}
 	else if (command == "info") {
+		message.channel.startTyping();
 		let user = await getUser(message);
 		if (!user) {
 			message.reply("Invalid user");
 			return;
 		}
-		message.channel.startTyping();
-		client.fetchUser(user).then((user) => {
-			message.reply({
-				embed: {
-					color: 12290084,
-					title: "ToastBot",
-					description: `Information`,
-					fields: [{
-							name: "Username",
-							value: `${user.username}`
-						},
-						{
-							name: "Tag",
-							value: `${user.tag}`
-						},
-						{
-							name: "ID",
-							value: `${user.id}`
-						},
-						{
-							name: "Avatar",
-							value: `${user.avatarURL}`
+		message.reply({
+			embed: {
+				color: 12290084,
+				title: "ToastBot",
+				description: `Information`,
+				fields: [{
+						name: "Username",
+						value: `${user.username}`
+					},
+					{
+						name: "Tag",
+						value: `${user.tag}`
+					},
+					{
+						name: "ID",
+						value: `${user.id}`
+					},
+					{
+						name: "Avatar",
+						value: `${user.avatarURL}`
 
-						}],
-					timestamp: new Date(),
-					thumbnail: user.avatarURL,
-					value: "Toasted the bread!"
-				}
-			})
-			message.channel.stopTyping();
+					}],
+				timestamp: new Date(),
+				thumbnail: user.avatarURL,
+				value: "Toasted the bread!"
+			}
 		})
+		message.channel.stopTyping();
 	}
     else if (command == "github" || command == "source") {
 		message.reply("ToastBot's github can be found here! https://github.com/darkvoid07/ToastBot");
