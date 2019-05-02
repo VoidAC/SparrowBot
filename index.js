@@ -1,7 +1,7 @@
 /*
 ToastBot, the ordinary open source bot
 */
-//Declare all requires and make bot object
+//aquatic is a homosexual goomba ok
 const Discord = require("discord.js");
 const math = require("mathjs");
 const config = require("./config.json")
