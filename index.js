@@ -29,10 +29,11 @@ client.on("message", async message => {
 
             embed: ({
                 title: "Ping",
-                color: "#b5651d",
+                color: 12290084,
                 fields: [{
 
-                    name: (`${Math.floor(client.ping)} ms ping.`),
+                    name: "Pong!",
+                    value: (`${Math.floor(client.ping)} ms ping.`)
 
 
                 }],
@@ -47,7 +48,7 @@ client.on("message", async message => {
             setTimeout(function() {
                 message.channel.startTyping();
                 message.reply({
-                    color: 12290084 ,
+                    color: 12290084,
                     title: "ToastBot",
                     description: `Information`,
                     fields: [{
@@ -78,6 +79,14 @@ client.on("message", async message => {
                 message.channel.stopTyping();
             }, 2000)
         })
+    }
+    if (command === (prefix + "github")) {
+        if (message.member == message.guild.me) return;
+    message.reply("ToastBot's github can be found here! https://github.com/darkvoid07/ToastBot")
+    }
+    if (command === (prefix + "source")) {
+        if (message.member == message.guild.me) return;
+    message.reply("ToastBot's source can be found here! https://github.com/darkvoid07/ToastBot")
     }
 
 
