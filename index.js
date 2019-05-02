@@ -48,8 +48,8 @@ client.on("message", async message => {
                 message.channel.startTyping();
                 message.reply({
                     color: 353231,
-                    title: "USS Milwaukee",
-                    description: `Bot Information`,
+                    title: "ToastBot",
+                    description: `Information`,
                     fields: [{
                             name: "Username",
                             value: `${user.username}`
