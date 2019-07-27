@@ -59,16 +59,39 @@ client.on("message", async (message) => {
                 color: 1,
                 fields: [{
                     name: "Commands",
-                    value: (`🔷 Ping | Github/Source | Info | Invite 🔷`)
+                    value: (`🔷 Ping | Github/Source | Info | Invite | Math 🔷`)
                 }]
             }
-        });
+		})
+		
 
     } else if (command == "eval") {
-        if (message.author.id === "398259331834839041") {
             let evalthis = message.content.split(`${prefix}eval `).join(" ")
-            eval(evalthis)
-        }
+			let result = eval(evalthis)
+			message.reply({
+				embed: {
+					title: "Evaluation complete",
+					color: 1,
+					fields: [{
+						name: `Result`,
+						value: (`${result}`)
+					}]
+				}
+			})
+		
+		} else if (command == "math") {
+            let evalthis = message.content.split(`${prefix}math `).join(" ")
+			let mathresult = math.eval(evalthis)
+			message.reply({
+				embed: {
+					title: "Math.js Evaluation complete",
+					color: 1,
+					fields: [{
+						name: `Result`,
+						value: (`Answer: ${evalthis} = ${mathresult}`)
+					}]
+				}
+			})
     } else if (command == "shutdown") {
         if (message.author.id === "398259331834839041") {
             client.destroy();
