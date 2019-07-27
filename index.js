@@ -45,7 +45,7 @@ client.on("message", async(message) => {
 		message.reply({
 			embed: {
 				title: "Ping",
-				color: 12290084,
+				color: 1,
 				fields: [{
 					name: "Pong!",
 					value: (`${Math.floor(client.ping)} ms ping.`)
@@ -62,7 +62,7 @@ client.on("message", async(message) => {
 		}
 		message.reply({
 			embed: {
-				color: 12290084,
+				color: 1,
 				title: "Sparrow",
 				description: `Information`,
 				fields: [{
