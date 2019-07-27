@@ -29,7 +29,7 @@ client.on("ready", async() => {
         client.user.setPresence({
             game: { 
                 name: 'websockets',
-                type: 'WATCHING'
+                type: 'LISTENING'
             },
             status: 'online'
         })
