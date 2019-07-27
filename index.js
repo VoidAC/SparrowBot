@@ -1,5 +1,5 @@
 /*
-ToastBot, the ordinary open source bot
+Sparrow, the ordinary open source bot
 */
 
 const Discord = require("discord.js");
@@ -26,8 +26,14 @@ async function getUser(message) {
 
 client.on("ready", async() => {
     console.log(`${client.user.tag} is now online!`)
-    client.user.setActivity("Toasting bread")
-});
+        client.user.setPresence({
+            game: { 
+                name: 'websockets',
+                type: 'WATCHING'
+            },
+            status: 'online'
+        })
+    });
 
 //message listener
 
@@ -57,7 +63,7 @@ client.on("message", async(message) => {
 		message.reply({
 			embed: {
 				color: 12290084,
-				title: "ToastBot",
+				title: "Sparrow",
 				description: `Information`,
 				fields: [{
 						name: "Username",
@@ -78,13 +84,13 @@ client.on("message", async(message) => {
 					}],
 				timestamp: new Date(),
 				thumbnail: user.avatarURL,
-				value: "Toasted the bread!"
+				value: "Task Complete"
 			}
 		})
 		message.channel.stopTyping();
 	}
     else if (command == "github" || command == "source") {
-		message.reply("ToastBot's github can be found here! https://github.com/darkvoid07/ToastBot");
+		message.reply("Sparrow's Github can be found here! https://github.com/darkvoid07/SparrowBot");
     }
 });
 
